@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Select your symptoms");
+                builder.setTitle("Select your symptoms...");
                 builder.setCancelable(false);
                 builder.setMultiChoiceItems(diseases, selectedLanguage, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
