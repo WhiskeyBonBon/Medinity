@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
-    static String[] diseases = {"dau dau", "so mui", "dau bung", "bu cu", "cu bu", "sugar baby"};
+    static String[] diseases_symptoms = {"dau dau", "so mui", "dau bung", "bu cu", "cu bu", "sugar baby"};
     static LinkedList<String> user_symptoms = new LinkedList<String>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -82,20 +82,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         textView = findViewById(R.id.textView);
-        selectedLanguage = new boolean[diseases.length];
+        selectedLanguage = new boolean[diseases_symptoms.length];
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Select your symptoms...");
                 builder.setCancelable(false);
-                builder.setMultiChoiceItems(diseases, selectedLanguage, new DialogInterface.OnMultiChoiceClickListener() {
+                builder.setMultiChoiceItems(diseases_symptoms, selectedLanguage, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         if (b) {
 
                             langList.add(i);
-                            user_symptoms.add(diseases[i]);
+                            user_symptoms.add(diseases_symptoms[i]);
                             // Sort array list
 
                             Collections.sort(langList);
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                         // use for loop
                         for (int j = 0; j < langList.size(); j++) {
                             // concat array value
-                            stringBuilder.append(diseases[langList.get(j)]);
+                            stringBuilder.append(diseases_symptoms[langList.get(j)]);
                             // check condition
                             if (j != langList.size() - 1) {
                                 // When j value  not equal
@@ -196,16 +196,16 @@ public class MainActivity extends AppCompatActivity {
     public static LinkedList<countScore> Calcpercentage() {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
-        List<String> dd = Arrays.asList(MainActivity.diseases);
 
-        String[] diseases = MainActivity.diseases;
+        String[] diseases = {"Cardi B", "Arthitis", "Tendonitis", "ACL tear"};
       //  List<String> dl = Arrays.asList(diseases);
       //  LinkedList<String> Disease_List = new LinkedList<String>(dl);
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
 
         String[] headache_symptoms = {"dau dau"};
         String[] Stomache_symptoms = {"dau dau", "so mui", "dau bung", "bu cu"};
-        String[] Alabatrap_symptoms = {"dau dau", "so mui"};
+        String[] Alabatrap_symptoms = {"dau dau", "so mui", "sugar baby"};
+
 
         for (i = 0; i < diseases.length; i++) symptoms_of_disease[i] = new LinkedList<String>();
 
