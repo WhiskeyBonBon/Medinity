@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
-    String[] langArray = {"Java", "C++", "Kotlin", "C", "Python", "Javascript"};
-    static List<String> benh = new LinkedList<String>();
+    static String[] langArray = {"Java", "C++", "Kotlin", "C", "Python", "Javascript"};
+    static LinkedList<String> benh = new LinkedList<String>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     @Override
