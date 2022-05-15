@@ -31,13 +31,34 @@ import android.widget.Spinner;
 import java.util.*;
 import android.widget.TextView;
 import android.widget.Toast;
+class countScore {
+    LinkedList<String> symptoms;
+    String name;
+    int score;
 
+    public countScore(String name, LinkedList<String> symptoms) {
+        this.name = name;
+        this.symptoms = symptoms;
+        this.score = 0;
+    }
+
+    public int compareTo(countScore a) {
+        return this.score - a.score;
+    }
+}
+
+class CustomComparator implements Comparator<countScore> {
+    @Override
+    public int compare(countScore a, countScore b) {
+        return a.score < b.score ? 1 : -1;
+    }
+}
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
-    static String[] langArray = {"Java", "C++", "Kotlin", "C", "Python", "Javascript"};
-    static LinkedList<String> benh = new LinkedList<String>();
+    static String[] diseases = {"dau dau", "so mui", "dau bung", "bu cu", "cu bu", "sugar baby"};
+    static LinkedList<String> user_symptoms = new LinkedList<String>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     @Override
@@ -61,20 +82,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         textView = findViewById(R.id.textView);
-        selectedLanguage = new boolean[langArray.length];
+        selectedLanguage = new boolean[diseases.length];
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Select Language");
                 builder.setCancelable(false);
-                builder.setMultiChoiceItems(langArray, selectedLanguage, new DialogInterface.OnMultiChoiceClickListener() {
+                builder.setMultiChoiceItems(diseases, selectedLanguage, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         if (b) {
 
                             langList.add(i);
-                            benh.add(langArray[i]);
+                            user_symptoms.add(diseases[i]);
                             // Sort array list
 
                             Collections.sort(langList);
@@ -94,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                         // use for loop
                         for (int j = 0; j < langList.size(); j++) {
                             // concat array value
-                            stringBuilder.append(langArray[langList.get(j)]);
+                            stringBuilder.append(diseases[langList.get(j)]);
                             // check condition
                             if (j != langList.size() - 1) {
                                 // When j value  not equal
@@ -105,9 +126,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                         // set text on textView
                         textView.setText(stringBuilder.toString());
+                        Toast toast = Toast.makeText(getApplicationContext(), Calcpercentage().get(0).name, Toast.LENGTH_SHORT);
+                        toast.show();
                         textView.setVisibility(View.INVISIBLE);
-                       // Toast toast = Toast.makeText(getApplicationContext(), benh.toString(), Toast.LENGTH_SHORT);
-                       // toast.show();
                     }
                 });
 
@@ -142,10 +163,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -173,5 +190,47 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+// LinkedList<String>
+    // String[]
+    public static LinkedList<countScore> Calcpercentage() {
+        int i = 0, j, k;
+        LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
+        List<String> dd = Arrays.asList(MainActivity.diseases);
+
+        String[] diseases = MainActivity.diseases;
+      //  List<String> dl = Arrays.asList(diseases);
+      //  LinkedList<String> Disease_List = new LinkedList<String>(dl);
+        LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
+
+        String[] headache_symptoms = {"dau dau"};
+        String[] Stomache_symptoms = {"dau dau", "so mui", "dau bung", "bu cu"};
+        String[] Alabatrap_symptoms = {"dau dau", "so mui"};
+
+        for (i = 0; i < diseases.length; i++) symptoms_of_disease[i] = new LinkedList<String>();
+
+        symptoms_of_disease[0] = new LinkedList<>(Arrays.asList(headache_symptoms));
+        symptoms_of_disease[1] = new LinkedList<>(Arrays.asList(Stomache_symptoms));
+        symptoms_of_disease[2] = new LinkedList<>(Arrays.asList(Alabatrap_symptoms));
+
+        LinkedList<countScore> ll = new LinkedList<countScore>();
+        for (i = 0; i < symptoms_of_disease.length; i++) {
+            countScore tmp = new countScore(diseases[i], symptoms_of_disease[i]);
+            int score = 0;
+            for (j = 0; j < User_Symptoms_List.size(); j++) {
+                for (k = 0; k < symptoms_of_disease[i].size(); k++) {
+                    if (User_Symptoms_List.get(j) == symptoms_of_disease[i].get(k)) {
+                        score++;
+                    }
+                }
+            }
+            tmp.score = score;
+            ll.add(tmp);
+        }
+        for (i = 0; i < diseases.length; i++)  System.out.println(ll.get(i).score);
+
+        Collections.sort(ll,new CustomComparator());
+        System.out.println(ll.get(0).name);
+        return ll;
     }
 }
