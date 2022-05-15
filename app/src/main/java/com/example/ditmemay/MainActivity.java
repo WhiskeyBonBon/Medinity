@@ -28,11 +28,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import java.util.*;
 import android.widget.TextView;
+import android.widget.Toast;
+
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
     String[] langArray = {"Java", "C++", "Kotlin", "C", "Python", "Javascript"};
+    static List<String> benh = new LinkedList<String>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     @Override
@@ -69,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
                         if (b) {
 
                             langList.add(i);
+                            benh.add(langArray[i]);
                             // Sort array list
+
                             Collections.sort(langList);
                         } else {
                             // when checkbox unselected
@@ -98,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                         // set text on textView
                         textView.setText(stringBuilder.toString());
+                        textView.setVisibility(View.INVISIBLE);
+                       // Toast toast = Toast.makeText(getApplicationContext(), benh.toString(), Toast.LENGTH_SHORT);
+                       // toast.show();
                     }
                 });
 
@@ -126,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
                 builder.show();
             }
         });
+
+
     }
 
 
