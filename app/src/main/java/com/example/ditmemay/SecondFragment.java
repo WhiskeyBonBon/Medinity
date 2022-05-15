@@ -1,10 +1,15 @@
 package com.example.ditmemay;
 
+import static com.example.ditmemay.MainActivity.Calcpercentage;
+
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,21 +46,24 @@ public class SecondFragment extends Fragment {
         return binding.getRoot();
 
     }
-
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
+        ListView list_of_dis= binding.listBenhId;
+        LinkedList<countScore> list_benh = Calcpercentage();
+        ArrayList<String> arr = new ArrayList<String>();
+        for(int i=0; i< list_benh.size();i++) arr.add(list_benh.get(i).name);
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1,arr);
+        list_of_dis.setAdapter(myAdapter);
 
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

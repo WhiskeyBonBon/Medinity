@@ -1,7 +1,7 @@
 package com.example.ditmemay;
 
 import android.os.Bundle;
-
+import android.content.Intent;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
-
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -79,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-
         textView = findViewById(R.id.textView);
         selectedLanguage = new boolean[diseases_symptoms.length];
         textView.setOnClickListener(new View.OnClickListener() {
@@ -227,10 +224,10 @@ public class MainActivity extends AppCompatActivity {
             tmp.score = score;
             ll.add(tmp);
         }
-        for (i = 0; i < diseases.length; i++)  System.out.println(ll.get(i).score);
+//        for (i = 0; i < diseases.length; i++)  System.out.println(ll.get(i).score);
 
         Collections.sort(ll,new CustomComparator());
-        System.out.println(ll.get(0).name);
+//        System.out.println(ll.get(0).name);
         return ll;
     }
 }
