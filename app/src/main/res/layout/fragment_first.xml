@@ -9,24 +9,26 @@
     >
 
     <EditText
-        android:id="@+id/tuoi2"
+        android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Please enter your age:"
+        android:hint="Enter age:"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#37474F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
         android:id="@+id/textview_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome!"
+        android:text="@string/welcome"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,19 +48,21 @@
         app:layout_constraintVertical_bias="0.757" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="176dp"
         android:ems="10"
         android:fontFamily="@font/roboto"
-        android:hint="Please enter your name:"
+        android:hint="Enter name:"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="#37474F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <RadioGroup
         android:layout_width="2dp"
@@ -92,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tuoi2"
+        app:layout_constraintTop_toBottomOf="@+id/age"
         tools:ignore="MissingConstraints" />
 
     <RadioButton
@@ -105,7 +109,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toEndOf="@+id/male_button"
-        app:layout_constraintTop_toBottomOf="@+id/tuoi2"
+        app:layout_constraintTop_toBottomOf="@+id/age"
         tools:ignore="MissingConstraints" />
 
 

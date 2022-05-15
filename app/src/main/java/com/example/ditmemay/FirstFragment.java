@@ -1,13 +1,16 @@
 package com.example.ditmemay;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,29 +19,31 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.ditmemay.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
-
     private FragmentFirstBinding binding;
-
-
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
+            Bundle savedInstanceState) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
-
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                if(TextUtils.isEmpty(binding.name.getText().toString())){
+                    binding.name.setError("You must enter name!");
+                }
+                if(TextUtils.isEmpty(binding.age.getText().toString())){
+                    binding.age.setError("You must enter age!");
+                }
+                else {
+                    NavHostFragment.findNavController(FirstFragment.this)
+                            .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                }
             }
         });
 
@@ -64,5 +69,7 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
 
 }
