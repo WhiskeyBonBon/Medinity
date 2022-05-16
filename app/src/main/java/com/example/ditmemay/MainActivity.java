@@ -35,11 +35,13 @@ class countScore {
     LinkedList<String> symptoms;
     String name;
     int score;
-
-    public countScore(String name, LinkedList<String> symptoms) {
+    String Link;
+    //, String link
+    public countScore(String name, LinkedList<String> symptoms, String link) {
         this.name = name;
         this.symptoms = symptoms;
         this.score = 0;
+        this.Link = link;
     }
 
     public int compareTo(countScore a) {
@@ -58,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
     static String[] diseases_symptoms = {"dau dau", "so mui", "dau bung", "bu cu", "cu bu", "sugar baby"};
+    //static String[] url = {"a", "b", "c"};
+    static String[] url = {"https://www.google.com.vn/",
+            "https://www.reddit.com/",
+            "https://www.facebook.com/",
+            "https://www.google.com.vn/",
+            "https://www.facebook.com/",
+            "https://www.facebook.com/",
+            "https://www.facebook.com/"};
     static LinkedList<String> user_symptoms = new LinkedList<String>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -210,10 +220,10 @@ public class MainActivity extends AppCompatActivity {
         symptoms_of_disease[0] = new LinkedList<>(Arrays.asList(headache_symptoms));
         symptoms_of_disease[1] = new LinkedList<>(Arrays.asList(Stomache_symptoms));
         symptoms_of_disease[2] = new LinkedList<>(Arrays.asList(Alabatrap_symptoms));
-
+        // , MainActivity.url[i]
         LinkedList<countScore> ll = new LinkedList<countScore>();
         for (i = 0; i < symptoms_of_disease.length; i++) {
-            countScore tmp = new countScore(diseases[i], symptoms_of_disease[i]);
+            countScore tmp = new countScore(diseases[i], symptoms_of_disease[i], url[i]);
             int score = 0;
             for (j = 0; j < User_Symptoms_List.size(); j++) {
                 for (k = 0; k < symptoms_of_disease[i].size(); k++) {
