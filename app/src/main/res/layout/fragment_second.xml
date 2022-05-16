@@ -19,6 +19,7 @@
         android:id="@+id/list_benh_Id"
         android:layout_width="410dp"
         android:layout_height="519dp"
+        android:linksClickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
