@@ -61,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> langList = new ArrayList<>();
     static String[] diseases_symptoms = {"dau dau", "so mui", "dau bung", "bu cu", "cu bu", "sugar baby"};
     //static String[] url = {"a", "b", "c"};
+    static String[] url1 = {"https://www.google.com.vn/",
+            "https://www.reddit.com/",
+            "https://www.facebook.com/",
+            "https://www.google.com.vn/",
+            "https://www.facebook.com/",
+            "https://www.facebook.com/",
+            "https://www.facebook.com/"};
     static String[] url = {"https://www.google.com.vn/",
             "https://www.reddit.com/",
             "https://www.facebook.com/",
@@ -233,6 +240,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             tmp.score = score;
+            for( i = 0; i < ll.size(); i++) {
+                for(j = 0; j < url.length; j++) {
+                    if(ll.get(i).Link == url1[j]) {
+                        url[i] = url1[j];
+                    }
+                }
+            }
             ll.add(tmp);
         }
 //        for (i = 0; i < diseases.length; i++)  System.out.println(ll.get(i).score);
