@@ -188,15 +188,15 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-// LinkedList<String>
+    // LinkedList<String>
     // String[]
     public static LinkedList<countScore> Calcpercentage() {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
 
         String[] diseases = {"Cardi B", "Arthitis", "Tendonitis", "ACL tear"};
-      //  List<String> dl = Arrays.asList(diseases);
-      //  LinkedList<String> Disease_List = new LinkedList<String>(dl);
+        //  List<String> dl = Arrays.asList(diseases);
+        //  LinkedList<String> Disease_List = new LinkedList<String>(dl);
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
 
         String[] headache_symptoms = {"dau dau"};
