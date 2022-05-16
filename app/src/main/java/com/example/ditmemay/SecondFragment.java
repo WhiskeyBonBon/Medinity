@@ -33,9 +33,6 @@ import java.util.*;
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
-    String[] langArray = {"Java", "C++", "Kotlin", "C", "Python", "Javascript"};
-    boolean[] selectedLanguage;
-    ArrayList<Integer> langList = new ArrayList<>();
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -58,7 +55,9 @@ public class SecondFragment extends Fragment {
         ListView list_of_dis= binding.listBenhId;
         LinkedList<countScore> list_benh = Calcpercentage();
         ArrayList<String> arr = new ArrayList<String>();
-        for(int i=0; i< list_benh.size();i++) arr.add(list_benh.get(i).name);
+        for(int i=0; i< list_benh.size();i++) {
+            if(list_benh.get(i).score >= 1) arr.add(list_benh.get(i).name);
+        }
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,arr);
         list_of_dis.setAdapter(myAdapter);

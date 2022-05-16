@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         // set text on textView
                         textView.setText(stringBuilder.toString());
-                        Toast toast = Toast.makeText(getApplicationContext(), Calcpercentage().get(0).name, Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(getApplicationContext(), "Please click on next button  for our diagnosis", Toast.LENGTH_SHORT);
                         toast.show();
                         textView.setVisibility(View.INVISIBLE);
                     }
@@ -194,7 +194,8 @@ public class MainActivity extends AppCompatActivity {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
 
-        String[] diseases = {"Cardi B", "Arthitis", "Tendonitis", "ACL tear"};
+        String[] diseases = {"Common Cold", "Influenza", "Diarrhea", "Diabetes", "Asthma", "Alzheimer's", "Hypertension"};
+
         //  List<String> dl = Arrays.asList(diseases);
         //  LinkedList<String> Disease_List = new LinkedList<String>(dl);
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
