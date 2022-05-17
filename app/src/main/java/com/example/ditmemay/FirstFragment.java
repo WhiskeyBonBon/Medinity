@@ -57,11 +57,9 @@ public class FirstFragment extends Fragment {
         switch (view.getId()) {
             case R.id.male_button:
                 if (checked)
-                    // Pirates are the best
                     break;
             case R.id.female_button:
                 if (checked)
-                    // Ninjas rule
                     break;
         }
     }

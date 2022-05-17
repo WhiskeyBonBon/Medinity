@@ -1,5 +1,4 @@
 package com.example.ditmemay;
-
 import android.os.Bundle;
 import android.content.Intent;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,6 +30,7 @@ import android.widget.Spinner;
 import java.util.*;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Collections;
 class countScore {
     LinkedList<String> symptoms;
     String name;
@@ -59,7 +59,11 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
-    static String[] diseases_symptoms = {"dau dau", "so mui", "dau bung", "bu cu", "cu bu", "sugar baby"};
+    static String[] diseases_symptoms = {"Anxiety", "Chest pain", "Coughing", "Dyspena", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
+            , "Insomnia", "Lightheadedness", "Muscle pain",
+    "Nausea", "Nose blead", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Urine Discoloration",
+    "Vision problems", "Vomitting", "Watery Eyes"};
+  //  Collections.sort(disease_symptoms);
     //static String[] url = {"a", "b", "c"};
     static String[] url1 = {"https://www.google.com.vn/",
             "https://www.reddit.com/",
@@ -211,22 +215,21 @@ public class MainActivity extends AppCompatActivity {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
 
-        String[] diseases = {"Common Cold", "Influenza", "Diarrhea", "Diabetes", "Asthma", "Alzheimer's", "Hypertension"};
+        String[] diseases = {"Alzheimer's ", "Asthma ", "Common Cold", "Depression", "Diabetes", "Diarrhea ", "Hepatitis B",
+        "Hypertension", "Influenza", "Malaria", "Measles", "Peptic Ulcer", "Pneumonia", "Tuberculosis"};
 
-        //  List<String> dl = Arrays.asList(diseases);
-        //  LinkedList<String> Disease_List = new LinkedList<String>(dl);
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
 
-        String[] headache_symptoms = {"dau dau"};
-        String[] Stomache_symptoms = {"dau dau", "so mui", "dau bung", "bu cu"};
-        String[] Alabatrap_symptoms = {"dau dau", "so mui", "sugar baby"};
+        String[] d1 = {"dau dau","sugar baby"};
+        String[] d2 = {"dau dau", "so mui", "dau bung", "bu cu"};
+        String[] d3 = {"dau dau", "so mui", "sugar baby"};
 
 
         for (i = 0; i < diseases.length; i++) symptoms_of_disease[i] = new LinkedList<String>();
 
-        symptoms_of_disease[0] = new LinkedList<>(Arrays.asList(headache_symptoms));
-        symptoms_of_disease[1] = new LinkedList<>(Arrays.asList(Stomache_symptoms));
-        symptoms_of_disease[2] = new LinkedList<>(Arrays.asList(Alabatrap_symptoms));
+        symptoms_of_disease[0] = new LinkedList<>(Arrays.asList(d1));
+        symptoms_of_disease[1] = new LinkedList<>(Arrays.asList(d2));
+        symptoms_of_disease[2] = new LinkedList<>(Arrays.asList(d3));
         // , MainActivity.url[i]
         LinkedList<countScore> ll = new LinkedList<countScore>();
         for (i = 0; i < symptoms_of_disease.length; i++) {

@@ -69,9 +69,7 @@ public class SecondFragment extends Fragment {
 
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(MainActivity.url[position])));
 
-                if(intent.resolveActivity(requireContext().getPackageManager()) != null){
                     getActivity().startActivity(intent);
-                }
             }
         });
     }
