@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
-    static String[] diseases_symptoms = {"Anxiety", "Chest pain", "Coughing", "Dyspena", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
-            , "Insomnia", "Lightheadedness", "Muscle pain",
+    static String[] diseases_symptoms = {"Anxiety", "Chest pain", "Coughing", "Dyspena", "Drowsiness/Confusion" , "Fast heartbeat", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
+            , "Insomnia", "Lightheadedness", "Memory loss", "Mood swings", "Muscle pain",
     "Nausea", "Nose blead", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Urine Discoloration",
-    "Vision problems", "Vomitting", "Watery Eyes", "Memory loss", "Mood swings"};
+    "Vision problems", "Vomitting", "Watery Eyes", "Reading difficulty" };
   //  Collections.sort(disease_symptoms);
     //static String[] url = {"a", "b", "c"};
     static String[] url1 = {"https://www.webmd.com/alzheimers/default.htm",
@@ -236,11 +236,11 @@ public class MainActivity extends AppCompatActivity {
 
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
 
-        String[] d1 = {"Memory loss","Poor concentration", "Mood swings"};
-        String[] d2 = {"Dyspnea", "so mui", "dau bung", "bu cu"};
-        String[] d3 = {"dau dau", "so mui", "sugar baby"};
-        String[] d4 = {"dau dau", "so mui", "sugar baby"};
-        String[] d5 = {"dau dau", "so mui", "sugar baby"};
+        String[] d1 = {"Memory loss" , "Poor concentration", "Mood swings", "Reading difficulty", "Anxiety"};
+        String[] d2 = {"Dyspnea", "Fatigue", "Drowsiness/Confusion", "Coughing", "Fast heartbeat"};
+        String[] d3 = {"Coughing", "Sore throat", "Fever", "Sneezing", "Watery eyes"};
+        String[] d4 = {"Anxiety", "Mood swings", "Poor concentration", "Fatigue"};
+        String[] d5 = {"Vision problems", "Fatigue", "sugar baby"};
         String[] d6 = {"dau dau", "so mui", "sugar baby"};
         String[] d7 = {"dau dau", "so mui", "sugar baby"};
         String[] d8 = {"dau dau", "so mui", "sugar baby"};
@@ -250,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
         String[] d12 = {"dau dau", "so mui", "sugar baby"};
         String[] d13 = {"dau dau", "so mui", "sugar baby"};
         String[] d14 = {"dau dau", "so mui", "sugar baby"};
-        String[] d15 = {"dau dau", "so mui", "sugar baby"};
 
 
 
@@ -260,6 +259,18 @@ public class MainActivity extends AppCompatActivity {
         symptoms_of_disease[0] = new LinkedList<>(Arrays.asList(d1));
         symptoms_of_disease[1] = new LinkedList<>(Arrays.asList(d2));
         symptoms_of_disease[2] = new LinkedList<>(Arrays.asList(d3));
+        symptoms_of_disease[3] = new LinkedList<>(Arrays.asList(d4));
+        symptoms_of_disease[4] = new LinkedList<>(Arrays.asList(d5));
+        symptoms_of_disease[5] = new LinkedList<>(Arrays.asList(d6));
+        symptoms_of_disease[6] = new LinkedList<>(Arrays.asList(d7));
+        symptoms_of_disease[7] = new LinkedList<>(Arrays.asList(d8));
+        symptoms_of_disease[8] = new LinkedList<>(Arrays.asList(d9));
+        symptoms_of_disease[9] = new LinkedList<>(Arrays.asList(d10));
+        symptoms_of_disease[10] = new LinkedList<>(Arrays.asList(d11));
+        symptoms_of_disease[11] = new LinkedList<>(Arrays.asList(d12));
+        symptoms_of_disease[12] = new LinkedList<>(Arrays.asList(d13));
+        symptoms_of_disease[13] = new LinkedList<>(Arrays.asList(d14));
+
         // , MainActivity.url[i]
         LinkedList<countScore> ll = new LinkedList<countScore>();
         for (i = 0; i < symptoms_of_disease.length; i++) {
