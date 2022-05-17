@@ -1,21 +1,12 @@
 <resources>
-    <string name="app_name">Ditmemay</string>
+    <string name="app_name">Symptoms Checker</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string-array name="link">
-        <item>http://finalfantasy.wikia.com/wiki/Sephiroth_(Crisis_Core_Boss)</item>
-        <item>http://finalfantasy.wikia.com/wiki/Kefka_Palazzo</item>
-        <item>http://finalfantasy.wikia.com/wiki/Exdeath_(Boss)</item>
-        <item>http://finalfantasy.wikia.com/wiki/Kefka_Palazzo</item>
-        <item>http://finalfantasy.wikia.com/wiki/Exdeath_(Boss)</item><item>http://finalfantasy.wikia.com/wiki/Kefka_Palazzo</item>
-        <item>http://finalfantasy.wikia.com/wiki/Exdeath_(Boss)</item><item>http://finalfantasy.wikia.com/wiki/Kefka_Palazzo</item>
-        <item>http://finalfantasy.wikia.com/wiki/Exdeath_(Boss)</item><item>http://finalfantasy.wikia.com/wiki/Kefka_Palazzo</item>
-        <item>http://finalfantasy.wikia.com/wiki/Exdeath_(Boss)</item>
-    </string-array>
+    <string name="first_fragment_label">Symptoms Checker</string>
+    <string name="second_fragment_label">Results</string>
+    <string name="next">Check your health status prediction</string>
+    <string name="previous">Back to home</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="welcome">Welcome!</string>

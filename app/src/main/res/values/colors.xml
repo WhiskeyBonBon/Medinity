@@ -12,5 +12,7 @@
     <color name = "bg3">#6f87a3</color>
     <color name = "bg4">#b9ddf4	</color>
     <color name = "bg5">#fdfdfd	</color>
+    <color name="toolbar">#1C5173</color>
+    <color name="status">#0F2330</color>
 
 </resources>

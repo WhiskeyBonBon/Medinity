@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Ditmemay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/toolbar</item>
+        <item name="colorPrimaryVariant">@color/status</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -20,6 +20,6 @@
     </style>
 
     <style name="Theme.Ditmemay.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Ditmemay.PopUpOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="Theme.Ditmemay.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

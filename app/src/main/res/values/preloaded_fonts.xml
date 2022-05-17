@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/abeezee</item>
+        <item>@font/alatsi</item>
+        <item>@font/lobster</item>
+        <item>@font/pacifico</item>
         <item>@font/roboto</item>
         <item>@font/roboto_thin</item>
     </array>

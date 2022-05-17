@@ -16,20 +16,19 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
-            app:popupTheme="@style/Theme.Ditmemay.PopupOverlay" />
+            app:popupTheme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/background"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop" />
+
+    <include layout="@layout/content_main" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,17 +41,21 @@
             android:id="@+id/textView"
             android:layout_width="293dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="52dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+
             android:layout_marginBottom="116dp"
             android:background="@android:drawable/editbox_background"
-
             android:drawableRight="@android:drawable/arrow_down_float"
             android:drawablePadding="16dp"
+            android:fontFamily="@font/alatsi"
             android:hint="Select your symptoms..."
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:textSize="14sp" />
 
 
     </RelativeLayout>
