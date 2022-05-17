@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> langList = new ArrayList<>();
-    static String[] diseases_symptoms = {"Anxiety", "Chest pain", "Coughing", "Dyspena", "Drowsiness/Confusion" , "Fast heartbeat", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
-            , "Insomnia", "Lightheadedness", "Memory loss", "Mood swings", "Muscle pain",
-    "Nausea", "Nose blead", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Urine Discoloration",
+    static String[] diseases_symptoms = {"Anxiety", "Bloating", "Chest pain", "Coughing", "Dyspena", "Drowsiness/Confusion" , "Fast heartbeat", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
+            ,"Joint pain", "Insomnia", "Lightheadedness", "Loss of appetite", "Memory loss", "Mood swings", "Muscle pain",
+    "Nausea", "Nose bleed", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Swelling", "Unexplained weight loss", "Urine Discoloration",
     "Vision problems", "Vomitting", "Watery Eyes", "Reading difficulty" };
   //  Collections.sort(disease_symptoms);
     //static String[] url = {"a", "b", "c"};
@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
 
-        String[] diseases = {"Alzheimer's ", "Asthma", "Common Cold", "Depression", "Diabetes", "Diarrhea ", "Hepatitis B",
+        String[] diseases = {"Alzheimer's", "Asthma", "Common Cold", "Depression", "Diabetes", "Diarrhea", "Hepatitis B",
         "Hypertension", "Influenza", "Malaria", "Measles", "Peptic Ulcer", "Pneumonia", "Tuberculosis"};
 
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
@@ -240,16 +240,16 @@ public class MainActivity extends AppCompatActivity {
         String[] d2 = {"Dyspnea", "Fatigue", "Drowsiness/Confusion", "Coughing", "Fast heartbeat"};
         String[] d3 = {"Coughing", "Sore throat", "Fever", "Sneezing", "Watery eyes"};
         String[] d4 = {"Anxiety", "Mood swings", "Poor concentration", "Fatigue"};
-        String[] d5 = {"Vision problems", "Fatigue", "sugar baby"};
-        String[] d6 = {"dau dau", "so mui", "sugar baby"};
-        String[] d7 = {"dau dau", "so mui", "sugar baby"};
-        String[] d8 = {"dau dau", "so mui", "sugar baby"};
-        String[] d9 = {"dau dau", "so mui", "sugar baby"};
-        String[] d10 = {"dau dau", "so mui", "sugar baby"};
-        String[] d11 = {"dau dau", "so mui", "sugar baby"};
-        String[] d12 = {"dau dau", "so mui", "sugar baby"};
-        String[] d13 = {"dau dau", "so mui", "sugar baby"};
-        String[] d14 = {"dau dau", "so mui", "sugar baby"};
+        String[] d5 = {"Vision problems", "Fatigue", "Unexplained weight loss", "Lightheadedness", "Fast heartbeat"};
+        String[] d6 = {"Nausea", "Fever", "Bloating", "Fatigue"};
+        String[] d7 = {"Fever", "Fatigue", "Nausea", "Joint pain", "Loss of appetite"};
+        String[] d8 = {"Vision problems", "Fatigue", "Dyspnea", "Drowsiness/Confusion","Insomnia"};
+        String[] d9 = {"Coughing", "Fatigue", "Fever", "Headache", "Nausea", "Vomitting"};
+        String[] d10 = {"Headache", "Muscle pain", "Fatigue", "Nausea","Vomitting", "Coughing"};
+        String[] d11 = {"Watery eyes", "Coughing", "Runny nose", "Fatigue"};
+        String[] d12 = {"Heartburn", "Nausea", "Vomitting", "Fatigue", "Bloating", "Unexplained weight loss"};
+        String[] d13 = {"Dyspnea", "Sweating and shivering", "Fever", "Watery eyes", "Rapid heartbeat"};
+        String[] d14 = {"Unexplained weight loss", "Fatigue", "Loss of appetite", "Swelling"};
 
 
 
