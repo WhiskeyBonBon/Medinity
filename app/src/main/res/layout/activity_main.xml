@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/a"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/a"
-        android:scaleType="centerCrop" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -56,7 +50,7 @@
             android:layout_marginBottom="116dp"
             android:background="@android:drawable/editbox_background"
 
-             android:drawableRight="@android:drawable/arrow_down_float"
+            android:drawableRight="@android:drawable/arrow_down_float"
             android:drawablePadding="16dp"
             android:hint="Select your symptoms..."
             android:padding="12dp" />

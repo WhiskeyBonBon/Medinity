@@ -4,10 +4,12 @@ import static com.example.ditmemay.MainActivity.Calcpercentage;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -61,7 +63,17 @@ public class SecondFragment extends Fragment {
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,arr);
         list_of_dis.setAdapter(myAdapter);
+        list_of_dis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(MainActivity.url[position])));
+
+                if(intent.resolveActivity(requireContext().getPackageManager()) != null){
+                    getActivity().startActivity(intent);
+                }
+            }
+        });
     }
     @Override
     public void onDestroyView() {

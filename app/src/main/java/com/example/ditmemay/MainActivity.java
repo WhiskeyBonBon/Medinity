@@ -240,19 +240,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             tmp.score = score;
-            for( i = 0; i < ll.size(); i++) {
-                for(j = 0; j < url.length; j++) {
-                    if(ll.get(i).Link == url1[j]) {
-                        url[i] = url1[j];
-                    }
-                }
-            }
+
             ll.add(tmp);
         }
 //        for (i = 0; i < diseases.length; i++)  System.out.println(ll.get(i).score);
 
         Collections.sort(ll,new CustomComparator());
 //        System.out.println(ll.get(0).name);
+        for( i = 0; i < ll.size(); i++) {
+            url[i] = ll.get(i).Link;
+
+        }
         return ll;
     }
 }
