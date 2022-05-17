@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     static String[] diseases_symptoms = {"Anxiety", "Chest pain", "Coughing", "Dyspena", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
             , "Insomnia", "Lightheadedness", "Muscle pain",
     "Nausea", "Nose blead", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Urine Discoloration",
-    "Vision problems", "Vomitting", "Watery Eyes"};
+    "Vision problems", "Vomitting", "Watery Eyes", "Memory loss", "Mood swings"};
   //  Collections.sort(disease_symptoms);
     //static String[] url = {"a", "b", "c"};
     static String[] url1 = {"https://www.webmd.com/alzheimers/default.htm",
@@ -231,14 +231,28 @@ public class MainActivity extends AppCompatActivity {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
 
-        String[] diseases = {"Alzheimer's ", "Asthma ", "Common Cold", "Depression", "Diabetes", "Diarrhea ", "Hepatitis B",
+        String[] diseases = {"Alzheimer's ", "Asthma", "Common Cold", "Depression", "Diabetes", "Diarrhea ", "Hepatitis B",
         "Hypertension", "Influenza", "Malaria", "Measles", "Peptic Ulcer", "Pneumonia", "Tuberculosis"};
 
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
 
-        String[] d1 = {"dau dau","sugar baby"};
-        String[] d2 = {"dau dau", "so mui", "dau bung", "bu cu"};
+        String[] d1 = {"Memory loss","Poor concentration", "Mood swings"};
+        String[] d2 = {"Dyspnea", "so mui", "dau bung", "bu cu"};
         String[] d3 = {"dau dau", "so mui", "sugar baby"};
+        String[] d4 = {"dau dau", "so mui", "sugar baby"};
+        String[] d5 = {"dau dau", "so mui", "sugar baby"};
+        String[] d6 = {"dau dau", "so mui", "sugar baby"};
+        String[] d7 = {"dau dau", "so mui", "sugar baby"};
+        String[] d8 = {"dau dau", "so mui", "sugar baby"};
+        String[] d9 = {"dau dau", "so mui", "sugar baby"};
+        String[] d10 = {"dau dau", "so mui", "sugar baby"};
+        String[] d11 = {"dau dau", "so mui", "sugar baby"};
+        String[] d12 = {"dau dau", "so mui", "sugar baby"};
+        String[] d13 = {"dau dau", "so mui", "sugar baby"};
+        String[] d14 = {"dau dau", "so mui", "sugar baby"};
+        String[] d15 = {"dau dau", "so mui", "sugar baby"};
+
+
 
 
         for (i = 0; i < diseases.length; i++) symptoms_of_disease[i] = new LinkedList<String>();
