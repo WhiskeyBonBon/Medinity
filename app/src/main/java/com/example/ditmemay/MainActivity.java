@@ -65,20 +65,36 @@ public class MainActivity extends AppCompatActivity {
     "Vision problems", "Vomitting", "Watery Eyes"};
   //  Collections.sort(disease_symptoms);
     //static String[] url = {"a", "b", "c"};
-    static String[] url1 = {"https://www.google.com.vn/",
-            "https://www.reddit.com/",
-            "https://www.facebook.com/",
-            "https://www.google.com.vn/",
-            "https://www.facebook.com/",
-            "https://www.facebook.com/",
-            "https://www.facebook.com/"};
-    static String[] url = {"https://www.google.com.vn/",
-            "https://www.reddit.com/",
-            "https://www.facebook.com/",
-            "https://www.google.com.vn/",
-            "https://www.facebook.com/",
-            "https://www.facebook.com/",
-            "https://www.facebook.com/"};
+    static String[] url1 = {"https://www.webmd.com/alzheimers/default.htm",
+            "https://www.webmd.com/asthma/default.htm",
+            "https://www.webmd.com/cold-and-flu/common_cold_overview",
+            "https://www.webmd.com/depression/default.htm",
+            "https://www.webmd.com/diabetes/default.htm",
+            "https://www.webmd.com/digestive-disorders/digestive-diseases-diarrhea",
+            "https://www.webmd.com/hepatitis/digestive-diseases-hepatitis-b",
+            "https://www.webmd.com/hypertension-high-blood-pressure/default.htm",
+            "https://www.mayoclinic.org/diseases-conditions/flu/symptoms-causes/syc-20351719",
+            "https://www.webmd.com/a-to-z-guides/malaria-symptoms",
+            "https://www.webmd.com/children/vaccines/what-is-measles",
+            "https://www.webmd.com/digestive-disorders/peptic-ulcer-overview",
+          "https://www.webmd.com/lung/understanding-pneumonia-basics#:~:text=Pneumonia%20is%20a%20lung%20infection,oxygen%20to%20reach%20your%20bloodstream.",
+            "https://www.webmd.com/lung/understanding-tuberculosis-basics",
+    };
+    static String[] url = {"https://www.webmd.com/alzheimers/default.htm",
+            "https://www.webmd.com/asthma/default.htm",
+            "https://www.webmd.com/cold-and-flu/common_cold_overview",
+            "https://www.webmd.com/depression/default.htm",
+            "https://www.webmd.com/diabetes/default.htm",
+            "https://www.webmd.com/digestive-disorders/digestive-diseases-diarrhea",
+            "https://www.webmd.com/hepatitis/digestive-diseases-hepatitis-b",
+            "https://www.webmd.com/hypertension-high-blood-pressure/default.htm",
+            "https://www.mayoclinic.org/diseases-conditions/flu/symptoms-causes/syc-20351719",
+            "https://www.webmd.com/a-to-z-guides/malaria-symptoms",
+            "https://www.webmd.com/children/vaccines/what-is-measles",
+            "https://www.webmd.com/digestive-disorders/peptic-ulcer-overview",
+            "https://www.webmd.com/lung/understanding-pneumonia-basics#:~:text=Pneumonia%20is%20a%20lung%20infection,oxygen%20to%20reach%20your%20bloodstream.",
+            "https://www.webmd.com/lung/understanding-tuberculosis-basics",
+    };
     static LinkedList<String> user_symptoms = new LinkedList<String>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
