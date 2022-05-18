@@ -68,10 +68,7 @@ public class SecondFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(MainActivity.url[position])));
-
-                if(intent.resolveActivity(requireContext().getPackageManager()) != null){
                     getActivity().startActivity(intent);
-                }
             }
         });
     }

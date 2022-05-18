@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> langList = new ArrayList<>();
     static String[] diseases_symptoms = {"Anxiety", "Bloating", "Chest pain", "Coughing", "Dyspena", "Drowsiness/Confusion" , "Fast heartbeat", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
             ,"Joint pain", "Insomnia", "Lightheadedness", "Loss of appetite", "Memory loss", "Mood swings", "Muscle pain",
-    "Nausea", "Nose bleed", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Swelling", "Unexplained weight loss", "Urine Discoloration",
-    "Vision problems", "Vomitting", "Watery Eyes", "Reading difficulty" };
-  //  Collections.sort(disease_symptoms);
+            "Nausea", "Nose bleed", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Swelling", "Unexplained weight loss", "Urine Discoloration",
+            "Vision problems", "Vomitting", "Watery Eyes", "Reading difficulty" };
+    //  Collections.sort(disease_symptoms);
     //static String[] url = {"a", "b", "c"};
     static String[] url1 = {"https://www.webmd.com/alzheimers/default.htm",
             "https://www.webmd.com/asthma/default.htm",
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             "https://www.webmd.com/a-to-z-guides/malaria-symptoms",
             "https://www.webmd.com/children/vaccines/what-is-measles",
             "https://www.webmd.com/digestive-disorders/peptic-ulcer-overview",
-          "https://www.webmd.com/lung/understanding-pneumonia-basics#:~:text=Pneumonia%20is%20a%20lung%20infection,oxygen%20to%20reach%20your%20bloodstream.",
+            "https://www.webmd.com/lung/understanding-pneumonia-basics#:~:text=Pneumonia%20is%20a%20lung%20infection,oxygen%20to%20reach%20your%20bloodstream.",
             "https://www.webmd.com/lung/understanding-tuberculosis-basics",
     };
     static String[] url = {"https://www.webmd.com/alzheimers/default.htm",
@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
 
         String[] diseases = {"Alzheimer's", "Asthma", "Common Cold", "Depression", "Diabetes", "Diarrhea", "Hepatitis B",
-        "Hypertension", "Influenza", "Malaria", "Measles", "Peptic Ulcer", "Pneumonia", "Tuberculosis"};
+                "Hypertension", "Influenza", "Malaria", "Measles", "Peptic Ulcer", "Pneumonia", "Tuberculosis"};
 
         LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
 

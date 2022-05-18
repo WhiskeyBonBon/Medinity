@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
         android:fontFamily="@font/alatsi"
-        android:text="Here is the diagnosis of your health status"
+        android:text="Here are the diseases you might have"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/list_benh_Id"
         app:layout_constraintEnd_toEndOf="parent"
