@@ -39,14 +39,14 @@
         <!-- text view to display selected items-->
         <TextView
             android:id="@+id/textView"
-            android:layout_width="293dp"
+            android:layout_width="289dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="79dp"
-            android:layout_marginEnd="74dp"
+            android:layout_marginStart="53dp"
+            android:layout_marginEnd="53dp"
 
             android:layout_marginBottom="70dp"
             android:background="@android:drawable/editbox_background"
