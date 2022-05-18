@@ -1,4 +1,4 @@
-package com.example.ditmemay;
+package com.example.symptomschecker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
