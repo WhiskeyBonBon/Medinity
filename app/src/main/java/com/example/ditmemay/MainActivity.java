@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         // set text on textView
                         textView.setText(stringBuilder.toString());
-                        Toast toast = Toast.makeText(getApplicationContext(), "Please click on next button  for our diagnosis", Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(getApplicationContext(), "Please click on the button for your diagnosis", Toast.LENGTH_SHORT);
                         toast.show();
                         textView.setVisibility(View.INVISIBLE);
                     }
