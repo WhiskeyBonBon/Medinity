@@ -21,6 +21,7 @@ import com.example.ditmemay.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -30,18 +31,18 @@ public class FirstFragment extends Fragment {
         return binding.getRoot();
 
     }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(binding.name.getText().toString())){
+                if (TextUtils.isEmpty(binding.name.getText().toString())) {
                     binding.name.setError("You must enter name!");
                 }
-                if(TextUtils.isEmpty(binding.age.getText().toString())){
+                if (TextUtils.isEmpty(binding.age.getText().toString())) {
                     binding.age.setError("You must enter age!");
-                }
-                else {
+                } else {
                     NavHostFragment.findNavController(FirstFragment.this)
                             .navigate(R.id.action_FirstFragment_to_SecondFragment);
                 }
@@ -68,7 +69,5 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-
 }
+
