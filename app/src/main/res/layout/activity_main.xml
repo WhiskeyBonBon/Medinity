@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/transparent"
+            android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -31,10 +31,9 @@
     <include layout="@layout/content_main" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:padding="16dp"
-        tools:context=".SecondFragment"
         tools:visibility="visible">
         <!-- text view to display selected items-->
         <TextView
@@ -59,6 +58,7 @@
 
 
     </RelativeLayout>
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
