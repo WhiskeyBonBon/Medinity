@@ -1,7 +1,14 @@
 package com.example.ditmemay;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class ThirdFragment extends Fragment {
+import android.os.Bundle;
 
+public class ThirdFragment extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_third1);
+    }
 }

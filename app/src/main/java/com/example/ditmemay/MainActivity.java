@@ -58,7 +58,7 @@ class CustomComparator implements Comparator<countScore> {
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     boolean[] selectedLanguage;
-    ArrayList<Integer> langList = new ArrayList<>();
+    ArrayList<Integer> symlist = new ArrayList<>();
     static String[] diseases_symptoms = {"Anxiety", "Bloating", "Chest pain", "Coughing", "Dyspena", "Drowsiness/Confusion" , "Fast heartbeat", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
             ,"Joint pain", "Insomnia", "Lightheadedness", "Loss of appetite", "Memory loss", "Mood swings", "Muscle pain",
             "Nausea", "Nose bleed", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Swelling", "Unexplained weight loss", "Urine Discoloration",
@@ -122,15 +122,15 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         if (b) {
 
-                            langList.add(i);
+                            symlist.add(i);
                             user_symptoms.add(diseases_symptoms[i]);
                             // Sort array list
 
-                            Collections.sort(langList);
+                            Collections.sort(symlist);
                         } else {
                             // when checkbox unselected
                             // Remove position from langList
-                            langList.remove(Integer.valueOf(i));
+                            symlist.remove(Integer.valueOf(i));
                         }
                     }
                 });
@@ -141,11 +141,11 @@ public class MainActivity extends AppCompatActivity {
                         // Initialize string builder
                         StringBuilder stringBuilder = new StringBuilder();
                         // use for loop
-                        for (int j = 0; j < langList.size(); j++) {
+                        for (int j = 0; j < symlist.size(); j++) {
                             // concat array value
-                            stringBuilder.append(diseases_symptoms[langList.get(j)]);
+                            stringBuilder.append(diseases_symptoms[symlist.get(j)]);
                             // check condition
-                            if (j != langList.size() - 1) {
+                            if (j != symlist.size() - 1) {
                                 // When j value  not equal
                                 // to lang list size - 1
                                 // add comma
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                             // remove all selection
                             selectedLanguage[j] = false;
                             // clear language list
-                            langList.clear();
+                            symlist.clear();
                             // clear text view value
                             textView.setText("");
                         }
@@ -207,6 +207,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(MainActivity.this, ThirdFragment.class);
+            startActivity(intent);
             return true;
         }
 
@@ -221,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
     }
     // LinkedList<String>
     // String[]
+
     public static LinkedList<countScore> Calcpercentage() {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
