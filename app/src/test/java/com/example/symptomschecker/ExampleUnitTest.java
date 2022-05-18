@@ -1,4 +1,4 @@
-package com.example.ditmemay;
+package com.example.symptomschecker;
 
 import org.junit.Test;
 

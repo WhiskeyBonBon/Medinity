@@ -1,4 +1,4 @@
-package com.example.ditmemay;
+package com.example.symptomschecker;
 
 import android.content.Intent;
 import android.os.Bundle;

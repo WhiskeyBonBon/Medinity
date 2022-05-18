@@ -1,8 +1,7 @@
-package com.example.ditmemay;
+package com.example.symptomschecker;
 
-import static com.example.ditmemay.MainActivity.Calcpercentage;
+import static com.example.symptomschecker.MainActivity.Calcpercentage;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,25 +11,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-import com.example.ditmemay.databinding.ActivityMainBinding;
-import com.example.ditmemay.databinding.FragmentSecondBinding;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.symptomschecker.databinding.ActivityMainBinding;
+import com.example.symptomschecker.databinding.FragmentSecondBinding;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.*;
 public class SecondFragment extends Fragment {
 
