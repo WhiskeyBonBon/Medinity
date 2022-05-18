@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ditmemay">
+        android:theme="@style/Theme.symptomschecker">
 
         <activity
             android:name="com.example.symptomschecker.SplashScreenActivity"
@@ -22,12 +22,9 @@
 
         <activity
             android:name="com.example.symptomschecker.ThirdFragment"
-            android:theme="@style/Theme.Ditmemay.NoActionBar"
+            android:theme="@style/Theme.symptomschecker.NoActionBar"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
 
@@ -35,13 +32,10 @@
             android:name="com.example.symptomschecker.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Ditmemay.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.symptomschecker.NoActionBar">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

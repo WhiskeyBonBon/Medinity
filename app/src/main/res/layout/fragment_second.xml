@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
-    //android:background ="@drawable/a"
-    tools:context=".SecondFragment">
+
     <TextView
         android:id="@+id/textview_second"
         android:layout_width="wrap_content"
@@ -38,5 +37,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="23dp"
+        android:fontFamily="@font/alatsi"
+        android:text="Here are the diseases that you might have"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/list_benh_Id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
