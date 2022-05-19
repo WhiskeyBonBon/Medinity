@@ -4,10 +4,13 @@
     android:id="@+id/text_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fontFamily="@font/convergence"
+    android:fontFamily="@font/alatsi"
+    android:paddingLeft="15dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
     android:text="abc"
-    android:textStyle="bold"
     android:textColor="@color/black"
-    android:textSize="20dp">
+    android:textSize="20dp"
+    android:textStyle="normal">
 
 </TextView>

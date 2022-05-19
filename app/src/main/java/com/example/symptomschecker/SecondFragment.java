@@ -49,8 +49,8 @@ public class SecondFragment extends Fragment {
         for(int i=0; i< list_benh.size();i++) {
             if(list_benh.get(i).score >= 1) arr.add(list_benh.get(i).name);
         }
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1,arr);
+        //ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, arr);
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(), R.layout.text_color_layout,arr);
         list_of_dis.setAdapter(myAdapter);
         list_of_dis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

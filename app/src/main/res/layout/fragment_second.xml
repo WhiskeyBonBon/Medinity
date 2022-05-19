@@ -40,16 +40,16 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/alatsi"
         android:text="Here are the diseases that you might have"
-        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textSize="23dp"
         app:layout_constraintBottom_toTopOf="@+id/list_benh_Id"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 

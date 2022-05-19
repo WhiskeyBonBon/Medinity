@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-
         android:backgroundTint="#205375"
         android:fontFamily="@font/alatsi"
         android:text="@string/next"
