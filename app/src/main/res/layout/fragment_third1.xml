@@ -36,19 +36,26 @@
         android:fontFamily="@font/alatsi"
         android:text="Our repository"
         android:textSize="20sp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <TextView
         android:id="@+id/AboutUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="188dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
         android:fontFamily="@font/alatsi"
         android:text="About us"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,18 +68,18 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/RepoQR"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/imageSlider"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="368dp"
+        android:layout_height="371dp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AboutUs"
+        app:layout_constraintVertical_bias="0.0"
         app:sliderAnimationDuration="600"
         app:sliderAutoCycleDirection="back_and_forth"
         app:sliderIndicatorAnimationDuration="600"
