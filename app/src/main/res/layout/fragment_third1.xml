@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context = ".ThirdFragment"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".ThirdFragment">
 
     <ImageView
         android:id="@+id/background1"
@@ -15,19 +15,18 @@
         android:src="@drawable/background"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-26dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="141dp"
         android:layout_height="124dp"
         android:layout_marginBottom="4dp"
+        android:adjustViewBounds="true"
         android:src="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:adjustViewBounds="true"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/RepoQR"
@@ -64,55 +63,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="174dp"
-        android:layout_height="185dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitEnd"
-        android:src="@drawable/minh"
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/imageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="146dp"
-        android:layout_height="203dp"
-        android:layout_marginTop="76dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitEnd"
-        android:src="@drawable/minh1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="206dp"
-        android:layout_height="199dp"
-        android:layout_marginTop="80dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitEnd"
-        android:src="@drawable/dog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="163dp"
-        android:layout_height="197dp"
-        android:layout_marginEnd="4dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitEnd"
-        android:src="@drawable/son"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/AboutUs"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorEnabled="true"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="#5A5A5A"
+        app:sliderIndicatorUnselectedColor="#FFF"
+        app:sliderScrollTimeInSec="1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
