@@ -2,8 +2,18 @@ package com.example.symptomschecker;
 import android.content.Intent;
 import android.os.Bundle;
 
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.io.IOException;
+import java.nio.charset.Charset;
+
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Environment;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -49,51 +59,72 @@ class CustomComparator implements Comparator<countScore> {
         return a.score < b.score ? 1 : -1;
     }
 }
-public class MainActivity extends AppCompatActivity {
+
+
+public class MainActivity extends AppCompatActivity{
     TextView textView;
     boolean[] selectedLanguage;
     ArrayList<Integer> symlist = new ArrayList<>();
-    static String[] diseases_symptoms = {"Anxiety", "Bloating", "Chest pain", "Coughing", "Dyspena", "Drowsiness/Confusion" , "Fast heartbeat", "Fatigue", "Fever", "Headache", "Heartburn", "Hypoglycemia"
-            ,"Joint pain", "Insomnia", "Lightheadedness", "Loss of appetite", "Memory loss", "Mood swings", "Muscle pain",
-    "Nausea", "Nose bleed", "Poor concentration", "Rapid heartbeat", "Runny nose", "Sneezing", "Sore throat", "Stomachache", "Sweating and shivering", "Swelling", "Unexplained weight loss", "Urine Discoloration",
-    "Vision problems", "Vomitting", "Watery Eyes", "Reading difficulty" };
-  //  Collections.sort(disease_symptoms);
+    public static int numLines = 0;
+    public static String[] diseases_symptoms;
+    public static LinkedList<String>[] symptoms_of_disease;
+    public static String[] url;
+    public static String[] diseases;
+    //  Collections.sort(disease_symptoms);
     //static String[] url = {"a", "b", "c"};
-    static String[] url1 = {"https://www.webmd.com/alzheimers/default.htm",
-            "https://www.webmd.com/asthma/default.htm",
-            "https://www.webmd.com/cold-and-flu/common_cold_overview",
-            "https://www.webmd.com/depression/default.htm",
-            "https://www.webmd.com/diabetes/default.htm",
-            "https://www.webmd.com/digestive-disorders/digestive-diseases-diarrhea",
-            "https://www.webmd.com/hepatitis/digestive-diseases-hepatitis-b",
-            "https://www.webmd.com/hypertension-high-blood-pressure/default.htm",
-            "https://www.mayoclinic.org/diseases-conditions/flu/symptoms-causes/syc-20351719",
-            "https://www.webmd.com/a-to-z-guides/malaria-symptoms",
-            "https://www.webmd.com/children/vaccines/what-is-measles",
-            "https://www.webmd.com/digestive-disorders/peptic-ulcer-overview",
-          "https://www.webmd.com/lung/understanding-pneumonia-basics#:~:text=Pneumonia%20is%20a%20lung%20infection,oxygen%20to%20reach%20your%20bloodstream.",
-            "https://www.webmd.com/lung/understanding-tuberculosis-basics",
-    };
-    static String[] url = {"https://www.webmd.com/alzheimers/default.htm",
-            "https://www.webmd.com/asthma/default.htm",
-            "https://www.webmd.com/cold-and-flu/common_cold_overview",
-            "https://www.webmd.com/depression/default.htm",
-            "https://www.webmd.com/diabetes/default.htm",
-            "https://www.webmd.com/digestive-disorders/digestive-diseases-diarrhea",
-            "https://www.webmd.com/hepatitis/digestive-diseases-hepatitis-b",
-            "https://www.webmd.com/hypertension-high-blood-pressure/default.htm",
-            "https://www.mayoclinic.org/diseases-conditions/flu/symptoms-causes/syc-20351719",
-            "https://www.webmd.com/a-to-z-guides/malaria-symptoms",
-            "https://www.webmd.com/children/vaccines/what-is-measles",
-            "https://www.webmd.com/digestive-disorders/peptic-ulcer-overview",
-            "https://www.webmd.com/lung/understanding-pneumonia-basics#:~:text=Pneumonia%20is%20a%20lung%20infection,oxygen%20to%20reach%20your%20bloodstream.",
-            "https://www.webmd.com/lung/understanding-tuberculosis-basics",
-    };
+
+
     static LinkedList<String> user_symptoms = new LinkedList<String>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    public static String csvfileString;
+    // Method to automatically read data from a csv file
+    public void readData() {
+        try {
+            InputStream is = getResources().openRawResource(R.raw.testoop);
+
+            BufferedReader count = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            Set<String> set_diseases_symptoms = new HashSet<String>();
+
+            String line = "";
+
+            while (count.readLine() != null) numLines++;
+            count.close();
+            symptoms_of_disease = new LinkedList[numLines];
+            url = new String[numLines];
+            diseases = new String[numLines];
+
+            is = getResources().openRawResource(R.raw.testoop);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            int z = 0;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                String[] arr = new String[values.length - 2];
+                for (int j = 2; j < values.length; j++) {
+                    arr[j - 2] = values[j];
+                    set_diseases_symptoms.add(values[j]);
+                }
+                diseases[z] = values[0];
+                url[z] = values[1];
+                symptoms_of_disease[z] = new LinkedList<String>(Arrays.asList(arr));
+                z++;
+            }
+
+            diseases_symptoms = new String[set_diseases_symptoms.size()];
+           // Arrays.sort(diseases_symptoms);
+            set_diseases_symptoms.toArray(diseases_symptoms);
+            Arrays.sort(diseases_symptoms);
+
+            br.close();
+        } catch (IOException e1) {
+            Log.e("MainActivity", "Error", e1);
+            e1.printStackTrace();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.readData();
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -179,8 +210,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
 
@@ -205,46 +234,6 @@ public class MainActivity extends AppCompatActivity {
     public static LinkedList<countScore> Calcpercentage() {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
-
-        String[] diseases = {"Alzheimer's", "Asthma", "Common Cold", "Depression", "Diabetes", "Diarrhea", "Hepatitis B",
-        "Hypertension", "Influenza", "Malaria", "Measles", "Peptic Ulcer", "Pneumonia", "Tuberculosis"};
-
-        LinkedList<String>[] symptoms_of_disease = new LinkedList[diseases.length];
-
-        String[] d1 = {"Memory loss" , "Poor concentration", "Mood swings", "Reading difficulty", "Anxiety"};
-        String[] d2 = {"Dyspnea", "Fatigue", "Drowsiness/Confusion", "Coughing", "Fast heartbeat"};
-        String[] d3 = {"Coughing", "Sore throat", "Fever", "Sneezing", "Watery eyes"};
-        String[] d4 = {"Anxiety", "Mood swings", "Poor concentration", "Fatigue"};
-        String[] d5 = {"Vision problems", "Fatigue", "Unexplained weight loss", "Lightheadedness", "Fast heartbeat"};
-        String[] d6 = {"Nausea", "Fever", "Bloating", "Fatigue"};
-        String[] d7 = {"Fever", "Fatigue", "Nausea", "Joint pain", "Loss of appetite"};
-        String[] d8 = {"Vision problems", "Fatigue", "Dyspnea", "Drowsiness/Confusion","Insomnia"};
-        String[] d9 = {"Coughing", "Fatigue", "Fever", "Headache", "Nausea", "Vomitting"};
-        String[] d10 = {"Headache", "Muscle pain", "Fatigue", "Nausea","Vomitting", "Coughing"};
-        String[] d11 = {"Watery eyes", "Coughing", "Runny nose", "Fatigue"};
-        String[] d12 = {"Heartburn", "Nausea", "Vomitting", "Fatigue", "Bloating", "Unexplained weight loss"};
-        String[] d13 = {"Dyspnea", "Sweating and shivering", "Fever", "Watery eyes", "Rapid heartbeat"};
-        String[] d14 = {"Unexplained weight loss", "Fatigue", "Loss of appetite", "Swelling"};
-
-
-
-
-        for (i = 0; i < diseases.length; i++) symptoms_of_disease[i] = new LinkedList<String>();
-
-        symptoms_of_disease[0] = new LinkedList<>(Arrays.asList(d1));
-        symptoms_of_disease[1] = new LinkedList<>(Arrays.asList(d2));
-        symptoms_of_disease[2] = new LinkedList<>(Arrays.asList(d3));
-        symptoms_of_disease[3] = new LinkedList<>(Arrays.asList(d4));
-        symptoms_of_disease[4] = new LinkedList<>(Arrays.asList(d5));
-        symptoms_of_disease[5] = new LinkedList<>(Arrays.asList(d6));
-        symptoms_of_disease[6] = new LinkedList<>(Arrays.asList(d7));
-        symptoms_of_disease[7] = new LinkedList<>(Arrays.asList(d8));
-        symptoms_of_disease[8] = new LinkedList<>(Arrays.asList(d9));
-        symptoms_of_disease[9] = new LinkedList<>(Arrays.asList(d10));
-        symptoms_of_disease[10] = new LinkedList<>(Arrays.asList(d11));
-        symptoms_of_disease[11] = new LinkedList<>(Arrays.asList(d12));
-        symptoms_of_disease[12] = new LinkedList<>(Arrays.asList(d13));
-        symptoms_of_disease[13] = new LinkedList<>(Arrays.asList(d14));
 
         // , MainActivity.url[i]
         LinkedList<countScore> ll = new LinkedList<countScore>();
