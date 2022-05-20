@@ -1,3 +1,25 @@
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="app/src/main/res/drawable/new_logo.jpeg" alt="Logo" width="269.5" height="273.5">
+  </a>
+
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+  </p>
+</div>
+
 # Symptoms Checker
 - Android Mobile app to sort diseases that have the most symptoms aligned with the ones provided by the user. 
 - The user can click on the diseases' name in order to find out more about that particular disease (Leads to an external website).
