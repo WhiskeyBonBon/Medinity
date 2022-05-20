@@ -1,6 +1,6 @@
-package com.example.symptomschecker;
+package com.example.Medinity;
 
-import static com.example.symptomschecker.MainActivity.Calcpercentage;
+import static com.example.Medinity.MainActivity.Calcpercentage;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,8 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.symptomschecker.databinding.ActivityMainBinding;
-import com.example.symptomschecker.databinding.FragmentSecondBinding;
+import com.example.Medinity.R;
+import com.example.Medinity.databinding.FragmentSecondBinding;
 
 import java.util.ArrayList;
 import java.util.*;

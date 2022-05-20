@@ -1,4 +1,4 @@
-package com.example.symptomschecker;
+package com.example.Medinity;
 
 import org.junit.Test;
 

@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "symptomschecker"
+rootProject.name = "Medinity"
 include ':app'

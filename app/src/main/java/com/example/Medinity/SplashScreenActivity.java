@@ -1,4 +1,4 @@
-package com.example.symptomschecker;
+package com.example.Medinity;
 
 import android.content.Intent;
 import android.os.Bundle;

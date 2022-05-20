@@ -1,4 +1,4 @@
-package com.example.symptomschecker;
+package com.example.Medinity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.symptomschecker.databinding.FragmentFirstBinding;
+import com.example.Medinity.R;
+import com.example.Medinity.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;

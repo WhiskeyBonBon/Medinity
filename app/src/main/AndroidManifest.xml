@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.symptomschecker">
+    package="com.example.Medinity">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/Theme.symptomschecker">
 
         <activity
-            android:name="com.example.symptomschecker.SplashScreenActivity"
+            android:name="com.example.Medinity.SplashScreenActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name="com.example.symptomschecker.ThirdFragment"
+            android:name="com.example.Medinity.ThirdFragment"
             android:theme="@style/Theme.symptomschecker.NoActionBar"
             android:exported="true">
 
@@ -29,7 +29,7 @@
 
 
         <activity
-            android:name="com.example.symptomschecker.MainActivity"
+            android:name="com.example.Medinity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.symptomschecker.NoActionBar">

@@ -1,11 +1,11 @@
-package com.example.symptomschecker;
+package com.example.Medinity;
 
-import android.transition.Slide;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.smarteist.autoimageslider.SliderView;
+
+import com.example.Medinity.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 public class Slider_Adapter extends SliderViewAdapter<Slider_Adapter.Holder>{

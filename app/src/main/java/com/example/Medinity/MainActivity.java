@@ -1,4 +1,4 @@
-package com.example.symptomschecker;
+package com.example.Medinity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,7 +13,6 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Environment;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -26,7 +25,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.symptomschecker.databinding.ActivityMainBinding;
+import com.example.Medinity.R;
+import com.example.Medinity.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
