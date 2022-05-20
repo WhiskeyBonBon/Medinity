@@ -24,7 +24,7 @@
         android:id="@+id/imageView"
         android:layout_width="187dp"
         android:layout_height="204dp"
-        android:src="@drawable/dio"
+        android:src="@drawable/new_logo"
         app:layout_constraintBottom_toTopOf="@+id/textview_first"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"

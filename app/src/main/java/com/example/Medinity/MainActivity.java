@@ -27,6 +27,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.example.Medinity.R;
 import com.example.Medinity.databinding.ActivityMainBinding;
+import com.example.Medinity.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;

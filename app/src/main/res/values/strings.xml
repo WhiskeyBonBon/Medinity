@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Symptoms Checker</string>
+    <string name="app_name">Medinity</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Symptoms Checker</string>
+    <string name="first_fragment_label">Medinity</string>
     <string name="second_fragment_label">Results</string>
     <string name="next">Check your health status prediction</string>
     <string name="previous">Back to home</string>
