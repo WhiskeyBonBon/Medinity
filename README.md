@@ -5,4 +5,4 @@
 - Tool: Android Studio
 - Group members: Nairryday (lead), Minhcutehihi, nghson2812, Bmingg
 ## App Prototype
-![COMP1020 - App Prototype-2](https://user-images.githubusercontent.com/93191355/169232564-bfb655a0-d585-4753-8090-7be4e3aaf2c9.png)
+![COMP1020 - App Prototype](https://user-images.githubusercontent.com/93191355/169467008-e95f3ffa-7048-4b15-a1d2-5f0e3c29b4f0.png)
