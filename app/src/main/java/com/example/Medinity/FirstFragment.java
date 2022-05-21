@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.Medinity.R;
 import com.example.Medinity.databinding.FragmentFirstBinding;
+import com.google.android.material.transition.*;
 
 public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
