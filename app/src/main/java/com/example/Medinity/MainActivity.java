@@ -36,6 +36,10 @@ import java.util.*;
 
 import android.widget.Toast;
 import java.util.Collections;
+
+// The countScore class is used to contain the info of a disease
+// List of symptoms, the Link to the website about it,
+// score is for how many of the disease symptoms that matches the user input symptoms
 class countScore {
     LinkedList<String> symptoms;
     String name;
@@ -55,6 +59,7 @@ class countScore {
 }
 
 class CustomComparator implements Comparator<countScore> {
+    // used to compare two CocuntScore objects for the sorting process
     @Override
     public int compare(countScore a, countScore b) {
         return a.score < b.score ? 1 : -1;
@@ -64,15 +69,20 @@ class CustomComparator implements Comparator<countScore> {
 
 public class MainActivity extends AppCompatActivity{
     TextView textView;
-    boolean[] selectedLanguage;
+    boolean[] selectedDisease;
+
+    // to contain user input symptoms
     ArrayList<Integer> symlist = new ArrayList<>();
     public static int numLines = 0;
     public static String[] diseases_symptoms;
     public static LinkedList<String>[] symptoms_of_disease;
+
+    // to contain the urls of the diseases
     public static String[] url;
+
+    // to contain diseases names
     public static String[] diseases;
-    //  Collections.sort(disease_symptoms);
-    //static String[] url = {"a", "b", "c"};
+
 
 
     static LinkedList<String> user_symptoms = new LinkedList<String>();
@@ -82,9 +92,12 @@ public class MainActivity extends AppCompatActivity{
     // Method to automatically read data from a csv file
     public void readData() {
         try {
+            // Reading the symptoms list and the links from the Excel file
             InputStream is = getResources().openRawResource(R.raw.testoop);
 
             BufferedReader count = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+
+            // Set to contain all the symptoms, needs to be unique for the drop down list
             Set<String> set_diseases_symptoms = new HashSet<String>();
 
             String line = "";
@@ -114,6 +127,7 @@ public class MainActivity extends AppCompatActivity{
             diseases_symptoms = new String[set_diseases_symptoms.size()];
            // Arrays.sort(diseases_symptoms);
             set_diseases_symptoms.toArray(diseases_symptoms);
+            // Sorting the symptoms list for the drop down list
             Arrays.sort(diseases_symptoms);
 
             br.close();
@@ -135,14 +149,15 @@ public class MainActivity extends AppCompatActivity{
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         textView = findViewById(R.id.textView);
-        selectedLanguage = new boolean[diseases_symptoms.length];
+        // seleced diseases by the user
+        selectedDisease = new boolean[diseases_symptoms.length];
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Select your symptoms...");
                 builder.setCancelable(false);
-                builder.setMultiChoiceItems(diseases_symptoms, selectedLanguage, new DialogInterface.OnMultiChoiceClickListener() {
+                builder.setMultiChoiceItems(diseases_symptoms, selectedDisease, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         if (b) {
@@ -196,9 +211,9 @@ public class MainActivity extends AppCompatActivity{
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         // use for loop
-                        for (int j = 0; j < selectedLanguage.length; j++) {
+                        for (int j = 0; j < selectedDisease.length; j++) {
                             // remove all selection
-                            selectedLanguage[j] = false;
+                            selectedDisease[j] = false;
                             // clear language list
                             symlist.clear();
                             // clear text view value
@@ -229,9 +244,8 @@ public class MainActivity extends AppCompatActivity{
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-    // LinkedList<String>
-    // String[]
 
+// To access the user symptoms list and sorting them in order for the second fragment
     public static LinkedList<countScore> Calcpercentage() {
         int i = 0, j, k;
         LinkedList<String> User_Symptoms_List = MainActivity.user_symptoms;
@@ -252,10 +266,10 @@ public class MainActivity extends AppCompatActivity{
 
             ll.add(tmp);
         }
-//        for (i = 0; i < diseases.length; i++)  System.out.println(ll.get(i).score);
+
 
         Collections.sort(ll,new CustomComparator());
-//        System.out.println(ll.get(0).name);
+        // Contains the urls of the diseases (for each one)
         for( i = 0; i < ll.size(); i++) {
             url[i] = ll.get(i).Link;
 

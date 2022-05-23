@@ -8,7 +8,7 @@ import com.example.Medinity.R;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
-
+// Third fragment for the about us page
 public class ThirdFragment extends AppCompatActivity {
 
     SliderView sliderview;

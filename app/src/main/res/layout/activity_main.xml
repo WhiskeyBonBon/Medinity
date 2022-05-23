@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.Medinity.MainActivity">
-    <!-- alabatrap -->
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.symptomschecker.AppBarOverlay">
-
+        <!--  Designing the toolbar in the first fragment -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -30,6 +30,7 @@
         android:src="@drawable/background"
         android:scaleType="centerCrop" />
 
+    <!-- Creating the drop down list in the first fragment -->
     <include layout="@layout/content_main" />
 
         <RelativeLayout

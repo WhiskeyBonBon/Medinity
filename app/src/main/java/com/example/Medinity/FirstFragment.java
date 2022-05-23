@@ -28,7 +28,7 @@ public class FirstFragment extends Fragment {
         return binding.getRoot();
 
     }
-
+    // Creating the user input for name and age
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +46,8 @@ public class FirstFragment extends Fragment {
             }
         });
     }
+
+    // Check if the user has checked and input the name/age box
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();

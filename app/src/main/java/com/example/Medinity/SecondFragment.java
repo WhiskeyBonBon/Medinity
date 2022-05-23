@@ -34,6 +34,7 @@ public class SecondFragment extends Fragment {
         return binding.getRoot();
 
     }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
@@ -43,15 +44,25 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
+
+        // Acessing the array of symptoms and user input symptoms from the first fragment
         ListView list_of_dis= binding.listBenhId;
         LinkedList<countScore> list_benh = Calcpercentage();
         ArrayList<String> arr = new ArrayList<String>();
+
+        // If this particular disease matches x number of symptoms with the user inputs, then it might be a possible disease the user has
+        // put the disease in the possible list
+
         for(int i=0; i< list_benh.size();i++) {
             if(list_benh.get(i).score >= 1) arr.add(list_benh.get(i).name);
         }
-        //ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, arr);
+
+
+        // Using an Array Adapater to output the diseases on the second screen
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(), R.layout.text_color_layout,arr);
         list_of_dis.setAdapter(myAdapter);
+        // make this so that when the user clicks on the disease name, an external link leading to a website is created and
+        // open the website on the user's screen
         list_of_dis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import com.example.Medinity.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
-
+// This class is for the slider in the about us page
 public class Slider_Adapter extends SliderViewAdapter<Slider_Adapter.Holder>{
     int[] images;
 
