@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.Medinity.FirstFragment">
 
+
+
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#205375"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/text_button"
         android:fontFamily="@font/alatsi"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/toolbar</item>
         <item name="colorPrimaryVariant">@color/status</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -21,6 +21,13 @@
 
     <style name="Theme.symptomschecker.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.symptomschecker.PopUpOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- toolbar style -->
+    <style name="TextAppearance.MdcTypographyStyles.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/dancing_script</item>
+        <item name="android:fontFamily">@font/dancing_script</item>
+        <item name="android:textSize">31sp</item>
+    </style>
 
     <!-- splash screen -->
     <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
