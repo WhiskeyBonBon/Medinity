@@ -7,6 +7,7 @@
 </div>
 
 # Medinity
+- Click the link here to download our App: <a href="https://bit.ly/3NLlf4T">https://bit.ly/3NLlf4T</a>
 - Android Mobile app to sort diseases that have the most symptoms aligned with the ones provided by the user. 
 - The user can click on the disease's name in order to find out more information about that particular disease (Links to an external website).
 - Language: Java
